@@ -1,0 +1,235 @@
+:root {
+--primary: #1e293b;
+--secondary: #0ea5e9;
+--accent: #f97316;
+--bg: #f1f5f9;
+--white: #ffffff;
+}
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+background: var(--bg);
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+header {
+background: linear-gradient(135deg, var(--primary), #334155);
+color: var(--white);
+text-align: center;
+padding: 25px;
+letter-spacing: 2px;
+animation: slideDown 0.7s ease;
+}
+nav {
+background: var(--primary);
+padding: 12px;
+text-align: center;
+}
+nav a {
+color: var(--white);
+margin: 10px;
+text-decoration: none;
+font-weight: bold;
+position: relative;
+transition: 0.3s;
+}
+nav a::after {
+content: "";
+position: absolute;
+width: 0%;
+height: 2px;
+background: var(--secondary);
+left: 0;
+bottom: -5px;
+transition: 0.3s;
+}
+nav a:hover {
+color: var(--secondary);
+}
+nav a:hover::after {
+width: 100%;
+}
+main {
+flex: 1;
+padding: 20px;
+max-width: 900px;
+margin: auto;
+animation: fadeIn 1s ease;
+}
+section {
+margin-bottom: 40px;
+}
+h2 {
+font-size: 32px;
+margin-bottom: 10px;
+color: var(--primary);
+}
+h3 {
+color: var(--primary);
+}
+p {
+color: #555;
+font-style: normal;
+}
+.btn {
+display: inline-block;
+margin-top: 20px;
+padding: 12px 25px;
+background: var(--secondary);
+color: var(--white);
+text-decoration: none;
+border-radius: 6px;
+transition: 0.3s;
+}
+.btn:hover {
+background: var(--accent);
+transform: scale(1.05);
+}
+table {
+width: 100%;
+border-collapse: collapse;
+background: var(--white);
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+animation: fadeUp 0.8s ease;
+}
+th {
+background: var(--primary);
+color: var(--white);
+}
+td, th {
+padding: 14px;
+text-align: center;
+}
+tr:nth-child(even) {
+background: #f8fafc;
+}
+tr:hover {
+background: #e2e8f0;
+transform: scale(1.01);
+transition: 0.2s;
+}
+form {
+width: 100%;
+background: var(--white);
+padding: 25px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+animation: fadeUp 0.8s ease;
+}
+input, textarea {
+width: 100%;
+margin: 12px 0;
+padding: 12px;
+border: 1px solid #cbd5f5;
+border-radius: 6px;
+transition: 0.3s;
+box-sizing: border-box;
+}
+input:focus, textarea:focus {
+border-color: var(--secondary);
+outline: none;
+box-shadow: 0 0 8px rgba(14,165,233,0.4);
+}
+button {
+width: 100%;
+padding: 12px;
+background: var(--secondary);
+color: var(--white);
+border: none;
+cursor: pointer;
+border-radius: 6px;
+transition: 0.3s;
+}
+button:hover {
+background: var(--accent);
+transform: scale(1.05);
+}
+footer {
+background: var(--primary);
+color: var(--white);
+padding: 20px;
+text-align: center;
+}
+.footer-links {
+margin-bottom: 10px;
+}
+.footer-links a {
+color: var(--white);
+margin: 0 10px;
+text-decoration: none;
+font-weight: bold;
+transition: 0.3s;
+}
+.footer-links a:hover {
+color: var(--secondary);
+transform: scale(1.1);
+}
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+@keyframes fadeUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+@keyframes slideDown {
+from {
+transform: translateY(-100%);
+}
+to {
+transform: translateY(0);
+}
+}
+@media (max-width: 768px) {
+main {
+max-width: 95%;
+padding: 15px;
+}
+h2 {
+font-size: 28px;
+}
+table {
+display: block;
+overflow-x: auto;
+white-space: nowrap;
+}
+}
+@media (max-width: 480px) {
+header {
+padding: 15px;
+letter-spacing: 1px;
+}
+nav {
+display: flex;
+flex-direction: column;
+gap: 12px;
+padding: 15px;
+}
+nav a {
+margin: 5px 0;
+}
+input, textarea, button {
+font-size: 16px;
+padding: 14px;
+}
+.btn {
+display: block;
+text-align: center;
+}
+.footer-links a {
+display: block;
+margin: 12px 0;
+}
+tr:hover, .btn:hover, button:hover {
+transform: none;
+}
+}
